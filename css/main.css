@@ -1,0 +1,269 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+
+
+html, body {
+	padding: 0px;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  margin: 0px 0px 0px 0px !important;
+
+}     
+
+header {
+  display: flow-root;
+  background-color: #8e9eab;
+  position: sticky;
+  top: 0px;
+  /*z-index: 55;*/
+}
+
+ul#menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+}
+
+ul.slicknav_nav {
+  display: block;
+  text-align: center;
+}
+
+ul.slicknav_nav li a {
+    font-size: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+ul li a:hover {
+  font-size: 18px;
+  animation: font-size 5s ease-in;
+}
+
+
+.single-row {
+  max-height: 700px;
+  height: 700px;
+  width: auto;
+  background: linear-gradient(to right, rgba(142, 158, 171, 1), rgba(238, 242, 243, 1));
+  overflow: hidden;
+  text-align: center;
+}
+
+.single-row:not(:first-child) {
+  margin-top:20px;
+
+}
+
+.single-row .link-placeholder {
+  height: 100%;
+}
+
+.single-row .link-placeholder:hover {
+  cursor: pointer;
+  /*z-index: 3434434*/
+}
+
+.single-row .link-placeholder a {
+  height: 100%;
+  display: block;
+}
+
+.single-row .link-placeholder a:hover {
+  cursor: pointer;
+}
+
+.single-row .empty-state {
+  font-size: 63px;
+  font-weight: bold;
+  margin-top: 40px;
+  color:#ffffff;
+}
+
+.single-row img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+.single-row h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.single-row .country {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: cursive;
+  font-weight: 100;
+  margin-bottom: 30px;
+  font-size: 25px;
+  text-decoration: underline;
+  /*-webkit-transition: font-size 500ms;
+     -moz-transition: font-size 500ms;
+       -o-transition: font-size 500ms;
+          transition: font-size 500ms;*/
+}
+
+.single-row .country:hover {
+  font-size: 30px;
+  color: white;
+}
+
+.single-row .type-container {
+  margin-top: 30px;
+
+}
+
+.single-row #typed {
+  margin-top: 22px;
+  font-size: 25px;
+  color: white;
+  font-family: 'Special Elite', cursive;
+}
+
+.single-row .flag {
+  width: 200px;
+  height: 100px;
+  display:block;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.single-row .left-side {
+  width: 50%;
+  height: 100%;
+  float:left;
+
+}
+
+.single-row .left-side h2 {
+  margin-top: 55px;
+}
+
+.single-row .left-side ul {
+  display: block;
+
+}
+
+
+.single-row .left-side ul li {
+
+  margin: 20px 0;
+  font-size: 20px;
+  list-style-type: square;
+
+}
+
+.single-row#photoGallery {
+  background-image: url('../images/polaroid.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.single-row .courses-section {
+  height: 100%;
+  padding-bottom: 200px;
+}
+
+.single-row .right-side {
+  width: 50%;
+  height: 100%;
+  float:right;
+}
+
+.single-row .right-side img {
+  border-radius: 30px;
+  height: auto;
+  width: 66%;
+  max-width: 66%;
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.single-row .right-side img:hover {
+  transform: scale(1.5);
+  cursor:pointer;
+}
+
+.single-row .international-image {
+  width: 200px;
+  
+}
+
+.single-row .list {
+font-size: 24px;
+}
+.single-row .list ul {
+  padding-left: 0px;
+}
+
+.single-row .list li{
+  font-size: 21px;
+  list-style-type: none;
+}
+.slicknav_menu {
+  display:none;
+}
+
+
+@media (max-width:1150px) {
+  .single-row .left-side {
+    width: 100% !important;
+  }
+  .single-row .right-side {
+    width: 100% !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  #my-photo {
+    transform: none;
+  }
+  #classes {
+    height: auto;
+    max-height: none;
+  }
+  .single-row#photoGallery {
+    background-image: url('../images/polaroid-notext.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+}
+@media (min-width:1480px) {
+ .single-row#photoGallery {
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display:none;
+  }
+    
+  .slicknav_menu {
+    display:block;
+  }
+
+}

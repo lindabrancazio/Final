@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+        <meta charset = "utf-8">
+        <title> Global Learning Experiences at Molloy College </title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <link rel="stylesheet" type="text/css" href="./css/animate.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    </head>
+    <body>
+
+        <header id="page-header">
+            <nav>
+                <ul id="menu">
+                   <li><a class="anchor" href="#photoGallery" title="Check out my photos!"><strong>Photo Gallery</strong></a></li>
+                   <li><a class="anchor" href="#about" title="A little info about me!"><strong>About Me</strong></a></li>
+                   <li><a class="anchor" href="#global" title="My traveling experiences"><strong>Global Learning Program</strong></a></li>
+                   <li><a class="anchor" href="#classes" title="My studies at Molloy"><strong>Classes at Molloy</strong></a></li>
+                </ul>
+            </nav>
+        </header>
+
+   
+
+
+        <div id="content"></div>
+
+
+       
+        <!-- Actual creation of component below for React -->
+        <script type="text/babel">
+	        class SingleRow extends React.Component {
+                    constructor(props) {
+                      super(props);
+                      this.state = {
+                        country: ''
+                      }
+                    }
+
+                    componentDidMount() {
+
+                       this.typeStart(); 
+                    }
+                    
+                    setCountry(item) {
+                        this.setState({
+                            country: item
+                        })
+
+                    }
+
+                    typeStart() {
+                        var typed = new Typed('#typed', {
+                          stringsElement: '#typed-strings',
+                          typeSpeed: 45,
+                          showCursor: false,
+                          loop: true,
+                          smartBackspace: true
+                        });
+                    }
+
+
+	                render() {
+ 
+
+    	                return (
+    	                	<div id={this.props.id} className="single-row">
+                                
+                                { 
+                                    this.props.linkRef &&
+                                        <div className="link-placeholder">
+                                            <a href="features/photo-gallery.html"></a>
+                                        </div>
+                                    
+                                }
+
+                                <h1>{this.props.pageTitle}</h1>
+                                {   
+                                    this.props.id =="global" && this.props.subItems &&
+                                    this.props.subItems.map((item, index) => {
+                                        return <div className="country" key={index} onClick={() => {this.setCountry(item)}}>{item}</div>
+                                    })
+                                }
+
+                                {
+                                    this.props.id == "about" && 
+                                    <div>
+                                       <img src="https://www.molloy.edu/prebuilt/images/molloy_logo_256x158_300dpi.png" height="200" alt="Molloy College Logo" /> 
+                                        <div className="type-container">
+                                            <div id="typed-strings">
+                                                <p>My name is Linda Brancazio.  I am a Molloy College alum, class of 2008.  I graduated  with a B.A. in Communications, with a minor in Art History.  During my 4 years at Molloy College, I was involved with the Global Learning Department and spent many semesters traveling abroad.  I enrolled in various Global Learning courses at Molloy College, as well as at international colleges during the Summer Semester Programs.  Be sure to check out some of the countries, cities and sights I've visited.</p>
+                                            </div>
+                                            <span id="typed"></span>
+                                        </div> 
+
+
+                                    </div>
+                                }
+
+                                {
+                                    this.props.id == "global" &&
+                                    <div>
+
+                                        {
+                                            !this.state.country && 
+                                            <div className="empty-state" >
+                                                <em>Click on a country above to learn more about where I've been!</em>
+                                            </div>
+
+
+                                        }
+
+                                        {
+                                            this.state.country == "Belgium" && 
+                                                <div className="cities">
+                                                
+                                                    <a target="_blank" href="https://www.booked.net/weather/belgium-59232"><img src="https://w.bookcdn.com/weather/picture/3_59232_0_1_99b3cf_430_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=91305"  alt="booked.net"/></a>
+                                                    <img className="flag animated jello" src="images/flagofbelgium.png" height="150" alt="Flag Of Belgium" /> 
+                                                    <div className="list">
+                                                        Cities and Sights I saw in Belgium:
+                                                        <ul>
+                                                            <li><strong>Brussels</strong> - <em>Atomium, Grand Palace, St. Gudula Cathedral</em></li>
+                                                            <li><strong>Lueven</strong> - <em>Town Hall, St. Peter's Church, Oude Market, Groot Begijnhof</em></li>
+                                                            <li><strong>Brugge, Ghent, Antwerp</strong></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                        }
+
+                                        {
+                                            this.state.country == "Greece" && 
+                                                <div className="cities">
+                                                
+                                                    <a target="_blank" href="https://www.booked.net/weather/athens-18328"><img src="https://w.bookcdn.com/weather/picture/3_18328_0_1_99b3cf_430_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=91305"  alt="booked.net"/></a>
+                                                    <img className="flag animated jello" src="images/flagofgreece.png" height="100" alt="Flag Of Greece" /> 
+                                                    <div className="list">
+                                                        Cities and Sights I saw in Greece:
+                                                        <ul>
+                                                            <li><strong>Athens</strong> - <em>The Acropolis, The Theater of Dionysius, The Temple of Athena Nike</em></li>
+                                                            <li><strong>Corinth</strong> - <em>Eleusis, The Grotto of Hades</em></li>
+                                                            <li><strong>Mycenae</strong> - <em>The Lion's Gate, The Palace of Agamemnon and Clytemnestra </em></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                        }
+
+                                        {
+                                            this.state.country == "Italy" && 
+                                                <div className="cities">
+                                                    <a target="_blank" href="https://www.booked.net/weather/florence-117"><img src="https://w.bookcdn.com/weather/picture/3_117_0_1_99b3cf_430_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=91305"  alt="booked.net"/></a>
+                                                    <img className="flag animated jello" src="images/flagofitaly.png" height="100" width="100" alt="Flag Of Italy" /> 
+                                                    <div className="list">
+                                                        Cities and Sights I saw in Italy:
+                                                        <ul>
+                                                            <li><strong>Florence</strong> - <em>Duomo, The Medici Chapels</em></li>
+                                                            <li><strong>Rome</strong> - <em>Vatican Museum, The Colosseum</em></li>
+                                                            <li><strong>Venice</strong> - <em>Piazza San Marco, Doges' Palaces</em></li>
+                                                            <li><strong>Sorrento, Capri, Pompeii, Naples</strong></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                        }
+
+                                        {
+                                            this.state.country == "France" && 
+                                                <div className="cities">
+                                                    <a target="_blank" href="https://www.booked.net/weather/paris-18145"><img src="https://w.bookcdn.com/weather/picture/3_18145_0_1_99b3cf_430_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=91305"  alt="booked.net"/></a>
+                                                 
+                                                    <img className="flag animated jello" src="images/FlagOfFrance.png" height="100" alt="Flag Of France" /> 
+                                                    <div className="list">
+                                                        Cities and Sights I saw in France:
+                                                        <ul>
+                                                            <li><strong>Paris</strong> - <em>The Eiffel Tower, Arc de Triomphe, The Lourve, Notre-Dame, Versailles</em></li>
+                                                            <li><strong>Caen</strong> - <em>Bayeux and Omaha Beach</em></li>
+                                                            <li><strong>Rouen</strong> - <em>Church of St. Ouen, Rouen Cathedral, The Museum des Beaux</em></li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+
+                                        }
+                                        
+                                    </div>
+
+
+                                }
+
+                                {
+                                    this.props.id == "classes" &&
+
+                                    <div className="courses-section">
+                                        <div className="left-side">
+                                            <h2> Courses Taken </h2>
+                                            <ul>
+                                                <li><strong>ART 390 GL Greek Art and Architecture</strong> - Professor Kathleen Reba </li>
+                                                <li><strong>PHI 390 GL Greek Philosophy</strong> - Dr. Stephen Mayo</li>
+                                                <li><strong>ART 238 GL Arts-Northern Italian Renaissance</strong> - Professor Donald Hazlitt </li>
+                                                <li><strong>COM 349 GL English Theatre & Literature Tour</strong> - Dr. Jeffrey Massey </li>
+                                                <li><strong>ART 390 GL Classical Roman Art</strong> - Professor Kathleen Reba </li>
+                                                <li><strong>SOC 390 GL Social Problems: European and American Perspectives</strong> - Dr. Meritta Cullinan </li>
+                                                <li><strong>PHI 390 GL Religious Thought in the Low Countries</strong> - Dr. Michael Russo </li>
+                                            </ul>
+                                        </div>
+
+                                        <div className="right-side">
+                                            <img id="my-photo" className="my-photo" src="images/internationaleducationmap.jpg" height="300" alt="International Education Map" />
+                                        </div>
+
+
+                                    </div> 
+
+                                }
+
+
+    	                	</div>
+    	                );
+	            }
+	        }
+
+	        class Content extends React.Component {
+	        	render() {
+	        		return (
+	        			<div className="content">
+		        			<SingleRow 
+		        				className="photo-gallery-row"
+		        				id="photoGallery"
+                                linkRef = "html/photo-gallery.html"
+		        			/>
+		        				
+		        			<SingleRow 
+		        				className="about-row"
+		        				id="about"
+                                pageTitle ="About Me"
+		        			/>
+		        			<SingleRow 
+		        				className="global-row"
+		        				id="global"
+                                pageTitle ="Global Learning Program"
+                                subItems = {["Greece", "Italy", "France", "Belgium"]}
+
+		        			/>
+		        			<SingleRow 
+		        				className="classes-row"
+		        				id="classes"
+                                pageTitle ="Classes at Molloy"
+
+		        			/>
+
+		        		</div>
+	        		);
+
+	        	}
+	    	}
+
+	        ReactDOM.render(
+	            <Content />,
+	            document.getElementById('content')
+	        );
+        </script>
+
+        <script>
+            $('#menu').slicknav({
+                    prependTo:'#page-header'
+            });
+
+            $( document ).ready(function() {
+                $(window).on("hashchange", function () {
+                    if (window.innerWidth < 768) {
+                        window.scrollTo(window.scrollX, window.scrollY - 250);
+                    } else {
+                        window.scrollTo(window.scrollX, window.scrollY - 70);
+                    }
+                });
+
+            });
+
+
+        </script>
+    </body>
+</html>
+            

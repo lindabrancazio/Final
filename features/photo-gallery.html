@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Photo Gallery</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="../css/photo-gallery.css">
+        <link rel="stylesheet" type="text/css" href="../css/slick.css">
+        <link rel="stylesheet" type="text/css" href="../css/slick-theme.css">
+
+
+</head>
+<body>
+	<div class="home-link">
+		<a class="go-home" href=../index.html title="Click here to return to main page">Go Home</a>
+	</div>	
+
+	<div class="carousel">
+	  <div><img src="../images/1.jpg" alt="Mountains in Kalambaka"></div>
+	  <div><img src="../images/2.jpg" alt="Group shot in Epidaurus"></div>
+	  <div><img src="../images/3.jpg" alt="Leuven, Belgium"></div>
+	  <div><img src="../images/4.jpg" alt="Group shot in front of Greece flag"></div>
+	  <div><img src="../images/5.jpg" alt="Dr. Mayo at restaurant"></div>
+	  <div><img src="../images/6.jpg" alt="Ancient Rome"></div>
+	  <div><img src="../images/7.jpg" alt="The Acropolis of Athens"></div>
+	  <div><img src="../images/8.jpg" alt="The girls in Amsterdam"></div>
+	  <div><img src="../images/9.jpg" alt="Kelly and I on top of Mt. Vesuvius"></div>
+	  <div><img src="../images/10.jpg" alt="Me and Drew in Leuven"></div>
+	  <div><img src="../images/11.jpg" alt="Italian Flags"></div>
+	  <div><img src="../images/12.jpg" alt="Amsterdam hotel"></div>
+	  <div><img src="../images/13.jpg" alt="Pompeii ruins"></div>
+	  <div><img src="../images/14.jpg" alt="Me at the Temple of Poseidon"></div>
+	  <div><img src="../images/15.jpg" alt="Nick and I in Venice"></div>
+	  <div><img src="../images/16.jpg" alt="Town Square Cathedral"></div>
+	  <div><img src="../images/17.jpg" alt="Monastery"></div>
+	  <div><img src="../images/18.jpg" alt="Lunch with Dr. Cullinan"></div>
+	  <div><img src="../images/19.jpg" alt="Russo Shot"></div>
+	  <div><img src="../images/20.jpg" alt="Rotterdam, Netherlands"></div>
+	</div>
+
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+	<!-- Using and initializing Slick javascript carousel (http://kenwheeler.github.io/slick/) -->
+	<script>
+			$('.carousel').slick({
+			  infinite: true,
+			  speed: 500,
+			  fade: true,
+			  cssEase: 'linear',
+			  arrows: true,
+			  accessibility: true,
+			  touchMove: true
+			});
+	</script>
+</body>
+</html>
